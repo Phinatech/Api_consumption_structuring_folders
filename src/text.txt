@@ -1,0 +1,9 @@
+componements
+layout
+pages: in pages it servers as you home screen you dont create an componets inside it
+creatng your routes
+for your signin/signup you create form fold
+
+hocs : you create an error bounadry
+
+to 
