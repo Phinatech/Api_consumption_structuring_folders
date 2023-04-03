@@ -6,4 +6,11 @@ for your signin/signup you create form fold
 
 hocs : you create an error bounadry
 
-to 
+if its a ts it is a file while if its tsx it is a components
+API
+
+api you install the instansts of axios thats the configuration setting of it.
+
+to text our Api you use rapid Api
+
+the header holds the end and routes

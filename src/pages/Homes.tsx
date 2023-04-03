@@ -1,7 +1,12 @@
 import React from "react";
+import { useQuery } from "@tanstack/react-query";
+import { fetchDictionary } from "../utils";
 
 const Homes = () => {
-  return <div>Homes</div>;
+  const { data } = useQuery({
+    queryKey: ["dictionary"],
+    queryFn: fetchDictionary,
+  });
 };
 
 export default Homes;

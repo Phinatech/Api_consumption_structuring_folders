@@ -1,10 +1,11 @@
-import React from "react";
+import React, { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { Homelayout } from "../components";
-import Homes from "../pages/Homes";
 import { Notfound } from "../utils";
 import Errorboundary from "../utils/hoc/Errorboundary";
 
+const Homes = lazy(() => import("../pages/Homes"));
+const About = lazy(() => import("../pages/About"));
 export const element = createBrowserRouter([
   {
     path: "/",
@@ -13,6 +14,12 @@ export const element = createBrowserRouter([
       {
         index: true,
         element: <Homes />,
+        errorElement: <Errorboundary />,
+        hasErrorBoundary: true,
+      },
+      {
+        path: "/about",
+        element: <About />,
         errorElement: <Errorboundary />,
         hasErrorBoundary: true,
       },
