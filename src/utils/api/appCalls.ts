@@ -2,8 +2,8 @@ import { IUser } from "../../types";
 import axios from "./api";
 
 export const fetchDictionary = async () => {
-  await axios
-    .get("/")
+  return await axios
+    .get("/define", { params: { term: "wat" } })
     .then((res) => res.data)
     .catch((err) => {
       return err;

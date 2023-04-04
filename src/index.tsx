@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { element } from "./routes/Allroutes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import Loading from "./components/Loading";
 const client = new QueryClient();
 
 const root = ReactDOM.createRoot(
@@ -13,10 +14,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={client}>
-      <RouterProvider router={element} />
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+    <Suspense fallback={<Loading />}>
+      <QueryClientProvider client={client}>
+        <RouterProvider router={element} />
+        <ReactQueryDevtools />
+      </QueryClientProvider>
+    </Suspense>
   </React.StrictMode>
 );
 
